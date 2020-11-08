@@ -1,7 +1,7 @@
 # ners570-finalproject
 
 ## Authors
-Kristin Barton (knbarton@umich.edu)
+Kristin Barton (knbarton@umich.edu)  
 Darryl Watkins (darryljw@umich.edu)
 
 ## Basis for Project
