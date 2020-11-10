@@ -1,5 +1,7 @@
 # ners570-finalproject
 
+[![Build Status](https://travis-ci.com/knbarton/ners570-finalproject.svg?branch=main)](https://travis-ci.com/knbarton/ners570-finalproject)
+
 ## Authors
 Kristin Barton (knbarton@umich.edu)  
 Darryl Watkins (darryljw@umich.edu)
