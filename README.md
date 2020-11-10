@@ -1,5 +1,7 @@
 # ners570-finalproject
 
+[![Build Status](https://travis-ci.com/knbarton/ners570-finalproject.svg?branch=main)](https://travis-ci.com/knbarton/ners570-finalproject)
+
 ## Authors
 Kristin Barton (knbarton@umich.edu)  
 Darryl Watkins (darryljw@umich.edu)
@@ -21,5 +23,3 @@ textbook, and the accompanying [Tsunami GitHub](https://github.com/modern-fortra
 However, this repository contains an unique implementation of the model.
 The majority of this project will be done in Fortran 90, while data visualization
 will be completed in Python.
-
-[![Build Status](https://travis-ci.com/knbarton/ners570-finalproject.svg?branch=main)](https://travis-ci.com/knbarton/ners570-finalproject)
