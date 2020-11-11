@@ -17,9 +17,14 @@ wavelength is significantly larger than the depth of the ocean. This means they
 can be studied using a simplified form of the Navier-Stokes equations known as
 the shallow-water equations (SWE).
 
-## Code
 The code model is inspired by the tsunami model featured in the *Modern Fortan*
 textbook, and the accompanying [Tsunami GitHub](https://github.com/modern-fortran/tsunami).
 However, this repository contains an unique implementation of the model.
 The majority of this project will be done in Fortran 90, while data visualization
 will be completed in Python.
+
+## How to Run
+This section will describe the interface for the user. It will include information about required modules, how to compile and run, and descriptions of any input variables.
+
+## Description of Code
+This section will describe how the code itself works. UML diagrams can be included here.
