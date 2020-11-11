@@ -1,4 +1,6 @@
-PROGRAM welcome
+POGRAM welcome
+
+  IMPLICIT NONE
 
   WRITE(*,*) "Welcome to Natural Disastor's Simple Tsunami Model!"
   WRITE(*,*)
