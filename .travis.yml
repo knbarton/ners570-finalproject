@@ -7,4 +7,6 @@ install:
   - sudo apt-get install gfortran
 
 script:
-  - gfortran src/model/welcome.f90 -o welcome.o && ./welcome.o
+  - cd src
+  - gfortran model/welcome.f90 -o model/welcome.o
+  - ./run.py
