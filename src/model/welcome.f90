@@ -1,4 +1,4 @@
-POGRAM welcome
+PROGRAM welcome
 
   IMPLICIT NONE
 
