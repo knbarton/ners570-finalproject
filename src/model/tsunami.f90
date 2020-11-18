@@ -59,7 +59,6 @@ do n = 1,num_time_steps
   call resetBCs(u)
   call resetBCs(v)
   call resetBCs(h)
-  print *, h(ic,jc)
 enddo
 
 open(2, file='output/final_height.out')
