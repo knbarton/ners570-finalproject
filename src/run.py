@@ -7,4 +7,5 @@ post-processing of data
 
 import subprocess
 
-subprocess.run(['model/welcome.o'])
+subprocess.run(['model/tsunami'])
+subprocess.run(['processing/plot.py'])
