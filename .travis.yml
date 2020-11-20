@@ -7,7 +7,13 @@ install:
   - sudo apt-get install gfortran
 
 script:
+<<<<<<< HEAD
   - cd src/model
   - gfortran -c mod_centered_diff.f90 mod_initialize.f90 tsunami.f90 
   - gfortran tsunami.o mod_initialize.o mod_centered_diff.o -o tsunami
   - cd ../ && ./run.py
+=======
+  - cd src
+  - gfortran model/welcome.f90 -o model/welcome.o
+  - ./run.py
+>>>>>>> main

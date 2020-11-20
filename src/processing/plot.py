@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+<<<<<<< HEAD
 
 import matplotlib
 import matplotlib.pyplot as plt
@@ -16,3 +17,9 @@ plt.colorbar()
 plt.title(str(name))
 plt.savefig(str(name)+'.png')
 plt.close()
+=======
+"""
+This code will get data from the ../output directory and
+perform post-processing visualization on it
+"""
+>>>>>>> main
