@@ -1,0 +1,1 @@
+/usr/bin/gfortran    -ffree-form -std=f2008 -fimplicit-none CMakeFiles/prog.dir/src/model/mod_centered_diff.f90.o CMakeFiles/prog.dir/src/model/mod_comp_next_step.f90.o CMakeFiles/prog.dir/src/model/mod_initialize.f90.o CMakeFiles/prog.dir/src/model/tsunami.f90.o  -o prog 
