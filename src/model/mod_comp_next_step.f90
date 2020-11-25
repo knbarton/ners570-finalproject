@@ -6,7 +6,7 @@ use mod_centered_diff
 implicit none
 
 private
-public :: compute_next_u!, compute_next_v, compute_next_h
+public :: compute_next_u, compute_next_v, compute_next_h
 
 contains
 
