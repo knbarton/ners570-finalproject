@@ -16,12 +16,17 @@ set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} ${dialect}")
 #
 # Compile.
 #
-#file(GLOB_RECURSE sources src/*.f90) # CMake understands dependencies and will build
-#add_executable(prog ${sources}) # the files in the right order
-
 file(GLOB_RECURSE sources
      src/mod_initialize.f90
      src/mod_centered_diff.f90
      src/mod_comp_next_step.f90
      src/tsunami.f90)
-add_executable(tsunami_prog ${sources}) 
+add_executable(tsunami_prog ${sources})
+
+#add_custom_command(COMMAND ${CMAKE_COMMAND} -E copy
+#                           ${CMAKE_SOURCE_DIR}/processing/plot_tsunami.py
+#                           ${CMAKE_CURRENT_BINARY_DIR}/plot_tsunami.py)
+
+configure_file(${CMAKE_SOURCE_DIR}/src/processing/plot_tsunami.py
+               ${CMAKE_CURRENT_BINARY_DIR}/plot_tsunami.py
+               COPYONLY)
