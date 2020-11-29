@@ -3,7 +3,6 @@ program tsunami
 use mod_centered_diff
 use mod_initialize
 use mod_comp_next_step
-use omp_lib
 
 implicit none
 
@@ -32,14 +31,6 @@ implicit none
   ! OpenMP
   integer :: numThreads
  
-  !$OMP PARALLEL private(numThreads)
-
-      numThreads = omp_get_num_threads()
-      print*, numThreads
-      PRINT *, "Hello from process: ", omp_get_num_procs()
-
-  !$OMP END PARALLEL
-
   h(:,:) = 0.0
   hm(:,:) = 10.
   u(:,:) = 0.0
@@ -73,10 +64,6 @@ implicit none
     call compute_next_u(im, jm, u, v, g, h, dx, dy, dt, u)
     call compute_next_v(im, jm, u, v, g, h, dx, dy, dt, v)
     call compute_next_h(im, jm, u, v, h, hm, dx, dy, dt,h)
-    ! Assign next time step to u,v,h
-!    u = next_u
-!    v = next_v
-!    h = next_h
     ! Reset periodic boundary conditions
     call resetBCs(u)
     call resetBCs(v)
