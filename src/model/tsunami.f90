@@ -3,12 +3,13 @@ program tsunami
 use mod_centered_diff
 use mod_initialize
 use mod_comp_next_step
+use omp_lib
 
 implicit none
 
   integer :: n = 0
   integer, parameter :: im = 201, jm = 201 ! Max dimensions of h,u,v arrays
-  integer, parameter :: num_time_steps = 5000, interval = 10
+  integer, parameter :: num_time_steps = 1000, interval = 10
 
   real, parameter :: dt = 0.02
   real, parameter :: dx = 1, dy = 1
@@ -27,6 +28,17 @@ implicit none
   integer :: fu
   character(len=10) :: file_id
   character(len=50) :: file_name
+
+  ! OpenMP
+  integer :: numThreads
+ 
+  !$OMP PARALLEL private(numThreads)
+
+      numThreads = omp_get_num_threads()
+      print*, numThreads
+      PRINT *, "Hello from process: ", omp_get_num_procs()
+
+  !$OMP END PARALLEL
 
   h(:,:) = 0.0
   hm(:,:) = 10.
