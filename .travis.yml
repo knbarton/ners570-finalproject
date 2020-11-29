@@ -11,4 +11,3 @@ script:
   - cmake ..
   - make
   - ./tsunami_prog
-  - ./plot_tsunami.py
