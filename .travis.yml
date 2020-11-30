@@ -5,9 +5,11 @@ python:
 
 install:
   - sudo apt-get install gfortran
+  - python3 -mpip install matplotlib
 
 script:
   - mkdir bld && cd bld/
   - cmake ..
   - make
   - ./tsunami_prog
+  - python plot_tsunami.py
