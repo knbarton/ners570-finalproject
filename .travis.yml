@@ -6,6 +6,8 @@ python:
 install:
   - sudo apt-get install gfortran
   - python3 -mpip install matplotlib
+  - pip install pandas
+  - pip install imageio
 
 script:
   - mkdir bld && cd bld/
