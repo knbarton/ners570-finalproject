@@ -14,6 +14,18 @@ set(CMAKE_Fortran_FLAGS_DEBUG "${CMAKE_Fortran_FLAGS_DEBUG} ${bounds}")
 set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} ${dialect}")
 
 #
+# Hack Futility build system to compile just whats needed for unit test
+#
+set(futilitytest
+   src/external/Futility/src/UnitTest.f90
+   src/external/Futility/src/IntryType.f90
+   )
+#add_library
+
+#Process test exectubals (if testing enabled)
+add_subdirectory(src/unit_tests)
+
+#
 # Compile.
 #
 file(GLOB_RECURSE sources
