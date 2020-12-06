@@ -21,6 +21,7 @@ set(futilitytest
    src/external/Futility/src/IntryType.f90
    )
 #add_library
+add_library(${futilitytest})
 
 #Process test exectubals (if testing enabled)
 add_subdirectory(src/unit_tests)
