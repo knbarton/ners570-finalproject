@@ -29,7 +29,7 @@ def plot_png(n):
 
 
 path = 'output/'
-images = []
+images = [] # initialize list for plot files
 
 start_parallel_time = time.time()
 if __name__ == '__main__':
@@ -37,23 +37,22 @@ if __name__ == '__main__':
         p.map(plot_png, range(0,10001,10))
 end_parallel_time = time.time()
 parallel_time = end_parallel_time - start_parallel_time
+print(f"The parallel time is {parallel_time} seconds")
 
 start_loop_time = time.time()
 for n in range(0,10001,10):
     name = str(n)
     file_path = path+name+'.out'
     if os.path.exists(file_path):
-        #plot_png(name)
         images.append(imageio.imread(path+name+'.png'))
 end_loop_time = time.time()
 loop_time = end_loop_time - start_loop_time
+print(f"The loop time is {loop_time} seconds")
 
 start_imageio_time = time.time()
 imageio.mimsave(path+'tsunami.gif', images)
 end_imageio_time = time.time()
 imageio_time = end_imageio_time - start_imageio_time
-
-print(f"The parallel time is {parallel_time} seconds")
-print(f"The loop time is {loop_time} seconds")
 print(f"The imageio time is {imageio_time} seconds")
+
 print(f"Total time is {parallel_time + loop_time + imageio_time} seconds")
