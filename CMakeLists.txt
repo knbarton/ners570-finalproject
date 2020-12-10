@@ -28,3 +28,7 @@ add_executable(tsunami_prog ${sources})
 configure_file(${CMAKE_SOURCE_DIR}/src/processing/plot_tsunami.py
                ${CMAKE_CURRENT_BINARY_DIR}/plot_tsunami.py
                COPYONLY)
+
+configure_file(${CMAKE_SOURCE_DIR}/src/processing/plot_tsunami_parallel.py
+               ${CMAKE_CURRENT_BINARY_DIR}/plot_tsunami_parallel.py
+               COPYONLY)

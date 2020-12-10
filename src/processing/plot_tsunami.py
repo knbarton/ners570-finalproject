@@ -5,6 +5,9 @@ import numpy as np
 import pandas as pd
 import os
 import imageio
+import time
+
+start_time = time.time()
 
 path = 'output/'
 images = []
@@ -25,3 +28,6 @@ for n in range(0,10001,10):
      images.append(imageio.imread('output/'+name+'.png'))
 
 imageio.mimsave('output/tsunami.gif', images)
+
+end_time = time.time()
+print(f"Total time is {end_time - start_time} seconds")
