@@ -6,9 +6,7 @@ import numpy as np
 import pandas as pd
 import os
 import imageio
-
 import multiprocessing as mp
-
 import time # https://stackoverflow.com/questions/7370801/how-to-measure-elapsed-time-in-python
 
 def plot_png(n):
@@ -32,8 +30,10 @@ path = 'output/'
 images = [] # initialize list for plot files
 
 start_parallel_time = time.time()
+cpus = mp.cpu_count() #https://stackoverflow.com/questions/1006289/how-to-find-out-the-number-of-cpus-using-python
+
 if __name__ == '__main__':
-    with mp.Pool(8) as p:
+    with mp.Pool(int(cpus*0.75)) as p: # using only 3/4 the physical number of cpu's
         p.map(plot_png, range(0,10001,10))
 end_parallel_time = time.time()
 parallel_time = end_parallel_time - start_parallel_time
