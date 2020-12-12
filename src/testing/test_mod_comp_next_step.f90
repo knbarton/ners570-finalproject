@@ -4,7 +4,8 @@ use mod_centered_diff
 use mod_comp_next_step
 
 implicit none
-  real, dimension(3,3) :: test_array, input_array_u, input_array_v, input_array_h, output_array
+  real, dimension(3,3) :: test_array, output_array 
+  real, dimension(3,3) :: input_array_u, input_array_v, input_array_h, input_array_hm
   integer :: im, jm
   real :: g, dx, dy, dt
   im = 3 
@@ -33,5 +34,35 @@ implicit none
   else
     print *, "Test failed"
   endif
+ 
+  print *, "Testing compute_next_v..."
+  input_array_u(:,:) = 1.0
+  input_array_v(:,:) = 1.0
+  input_array_h(:,:) = 1.0
+  test_array(:,:) = 1.0
+  
+  call compute_next_v(im, jm, input_array_v, input_array_u, g, input_array_h, dx, dy, dt, output_array)
+
+  if (all(test_array == output_array)) then
+    print *, "Test passed"
+  else
+    print *, "Test failed"
+  endif
+
+  print *, "Testing compute_next_h..."
+  input_array_u(:,:) = 1.0
+  input_array_v(:,:) = 1.0
+  input_array_h(:,:) = 1.0
+  input_array_hm(:,:) = 0.0
+  test_array(:,:) = 1.0
+  
+  call compute_next_h(im, jm, input_array_u, input_array_v, input_array_h, input_array_hm, dx, dy, dt, output_array)
+
+  if (all(test_array == output_array)) then
+    print *, "Test passed"
+  else
+    print *, "Test failed"
+  endif
+
 
 endprogram test_mod_comp_next_step
