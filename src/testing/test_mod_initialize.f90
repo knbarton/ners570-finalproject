@@ -18,7 +18,8 @@ implicit none
   
   call init_gaussian(input_array,decay,ic,jc)
   
-  
+  print *, "Testing mod_initialize..."
+   
   if (all(input_array == test_array)) then
     print *, "Test passed"
   else
