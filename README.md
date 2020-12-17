@@ -24,7 +24,15 @@ The majority of this project will be done in Fortran 90, while data visualizatio
 will be completed in Python.
 
 ## How to Run
-This section will describe the interface for the user. It will include information about required modules, how to compile and run, and descriptions of any input variables.
+The code can be run using the following commands:
+```
+mkdir bld
+cd bld
+cmake ..
+make
+./tsunami_prog
+./plot_tsunami.py
+```
+Requirements: Fortran compiler and Python.
 
-## Description of Code
-This section will describe how the code itself works. UML diagrams can be included here.
+The main tsunami program `tsunami_prog` generates a directory called `output` and will store the water height data as a text file. The plotting program `plot_tsunami.py` will generate .png files for each available time step and a gif called `tsunami.gif`. All of these will also be placed in the `output` folder.
