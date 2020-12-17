@@ -2,6 +2,8 @@ module mod_initialize
 ! Initialize the function
 ! Include support for different initial conditions?
 
+use omp_lib
+
 implicit none
 
 private
@@ -19,10 +21,13 @@ contains
     integer :: imax, jmax, i, j
     imax = size(array,dim=1)
     jmax = size(array,dim=2)
-    do i=1,imax
-      do j=1,jmax
-         array(i,j) = exp(-decay * ((i - ic)**2 + (j - jc)**2))
-      enddo
+    print*, 'init_gaussian'
+    do j=1,jmax
+      !$omp paralleldo
+         do i=1,imax
+            array(i,j) = exp(-decay * ((i - ic)**2 + (j - jc)**2))
+         enddo
+      !$omp end paralleldo
     enddo
   end subroutine init_gaussian
 
